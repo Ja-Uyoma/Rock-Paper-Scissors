@@ -51,3 +51,18 @@ function game() {
         
     console.log(playRound(playerSelection, computerSelection));
 }
+
+const rockButton = document.querySelector(".btn-rock");
+rockButton.addEventListener("click", () => {
+    console.log(playRound("rock", getComputerChoice()));
+});
+
+const paperButton = document.querySelector(".btn-paper");
+paperButton.addEventListener("click", () => {
+    console.log(playRound("paper", getComputerChoice()));
+});
+
+const scissorsButton = document.querySelector(".btn-scissors");
+scissorsButton.addEventListener("click", () => {
+    console.log(playRound("scissors", getComputerChoice()));
+});
