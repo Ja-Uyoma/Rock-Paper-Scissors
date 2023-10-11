@@ -52,6 +52,7 @@ function game() {
     console.log(playRound(playerSelection, computerSelection));
 }
 
+const body = document.querySelector("body");
 const div = document.createElement("div");
 
 const rockButton = document.querySelector(".btn-rock");
@@ -68,3 +69,5 @@ const scissorsButton = document.querySelector(".btn-scissors");
 scissorsButton.addEventListener("click", () => {
     div.textContent = playRound("scissors", getComputerChoice());
 });
+
+body.appendChild(div);
