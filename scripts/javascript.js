@@ -52,17 +52,19 @@ function game() {
     console.log(playRound(playerSelection, computerSelection));
 }
 
+const div = document.createElement("div");
+
 const rockButton = document.querySelector(".btn-rock");
 rockButton.addEventListener("click", () => {
-    console.log(playRound("rock", getComputerChoice()));
+    div.textContent = playRound("rock", getComputerChoice());
 });
 
 const paperButton = document.querySelector(".btn-paper");
 paperButton.addEventListener("click", () => {
-    console.log(playRound("paper", getComputerChoice()));
+    div.textContent = playRound("paper", getComputerChoice()); 
 });
 
 const scissorsButton = document.querySelector(".btn-scissors");
 scissorsButton.addEventListener("click", () => {
-    console.log(playRound("scissors", getComputerChoice()));
+    div.textContent = playRound("scissors", getComputerChoice());
 });
