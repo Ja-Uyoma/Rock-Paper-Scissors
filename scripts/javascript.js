@@ -46,10 +46,8 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     const MAX_ROUNDS = 5;
 
-    for (let i = 0; i < MAX_ROUNDS; ++i) {
-        const playerSelection = prompt("What is your choice?");
-        const computerSelection = getComputerChoice();
+    const playerSelection = prompt("What is your choice?");
+    const computerSelection = getComputerChoice();
         
-        console.log(playRound(playerSelection, computerSelection));
-    }
+    console.log(playRound(playerSelection, computerSelection));
 }
