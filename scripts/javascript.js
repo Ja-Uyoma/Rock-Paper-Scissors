@@ -44,30 +44,25 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    const MAX_ROUNDS = 5;
+    const body = document.querySelector("body");
+    const div = document.createElement("div");
 
-    const playerSelection = prompt("What is your choice?");
-    const computerSelection = getComputerChoice();
-        
-    console.log(playRound(playerSelection, computerSelection));
+    const rockButton = document.querySelector(".btn-rock");
+    rockButton.addEventListener("click", () => {
+        div.textContent = playRound("rock", getComputerChoice());
+    });
+
+    const paperButton = document.querySelector(".btn-paper");
+    paperButton.addEventListener("click", () => {
+        div.textContent = playRound("paper", getComputerChoice()); 
+    });
+
+    const scissorsButton = document.querySelector(".btn-scissors");
+    scissorsButton.addEventListener("click", () => {
+        div.textContent = playRound("scissors", getComputerChoice());
+    });
+
+    body.appendChild(div);
 }
 
-const body = document.querySelector("body");
-const div = document.createElement("div");
-
-const rockButton = document.querySelector(".btn-rock");
-rockButton.addEventListener("click", () => {
-    div.textContent = playRound("rock", getComputerChoice());
-});
-
-const paperButton = document.querySelector(".btn-paper");
-paperButton.addEventListener("click", () => {
-    div.textContent = playRound("paper", getComputerChoice()); 
-});
-
-const scissorsButton = document.querySelector(".btn-scissors");
-scissorsButton.addEventListener("click", () => {
-    div.textContent = playRound("scissors", getComputerChoice());
-});
-
-body.appendChild(div);
+game();
