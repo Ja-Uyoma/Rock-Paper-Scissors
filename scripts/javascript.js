@@ -57,32 +57,11 @@ function playRound(player, computer) {
     if (player === computer) {
         return "Stalemate";
     }
-
-    if (player === "rock" && computer === "paper") {
-        ++computerScore;
-        return "You Lose! Paper beats Rock";
+    else if (playerWon(player, computer)) {
+        return `You Win! ${player} beats ${computer}`;
     }
-    else if (player === "paper" && computer === "rock") {
-        ++playerScore;
-        return "You Win! Paper beats Rock";
-    }
-
-    if (player === "rock" && computer === "scissors") {
-        ++playerScore;
-        return "You Win! Rock beats Scissors";
-    }
-    else if (player === "scissors" && computer === "rock") {
-        ++computerScore;
-        return "You Lose! Rock beats Scissors";
-    }
-
-    if (player === "scissors" && computer === "paper") {
-        ++playerScore;
-        return "You Win! Scissors beats Paper";
-    }
-    else if (player === "paper" && computer === "scissors") {
-        ++computerScore;
-        return "You Lose! Scissors beats Paper";
+    else if (computerWon(player, computer)) {
+        return `You Lose! ${computer} beats ${player}`;
     }
 }
 
