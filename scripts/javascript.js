@@ -17,6 +17,18 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
+function playerWon(player, computer) {
+    return (player === "paper" && computer === "rock") 
+        || (player === "rock" && computer === "scissors") 
+        || (player === "scissors" && computer === "paper");
+}
+
+function computerWon(player, computer) {
+    return (computer === "paper" && player === "rock")
+        || (computer === "rock" && player === "scissors")
+        || (computer === "scissors" && player === "paper");
+}
+
 function getWinner(player, computer) {
     player.toLowerCase();
 
