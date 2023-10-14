@@ -51,7 +51,7 @@ function createCurrentScoreMessage() {
     return `Your score: ${playerScore}, Computer's score: ${computerScore}`;
 }
 
-function getWinner(player, computer) {
+function playRound(player, computer) {
     player.toLowerCase();
 
     if (player === computer) {
@@ -93,19 +93,19 @@ function game() {
 
     const rockButton = document.querySelector(".btn-rock");
     rockButton.addEventListener("click", () => {
-        div.textContent = getWinner("rock", getComputerChoice());
+        div.textContent = playRound("rock", getComputerChoice());
         score.textContent = `Player Score = ${playerScore}, Computer Score = ${computerScore}`;
     });
 
     const paperButton = document.querySelector(".btn-paper");
     paperButton.addEventListener("click", () => {
-        div.textContent = getWinner("paper", getComputerChoice());
+        div.textContent = playRound("paper", getComputerChoice());
         score.textContent = `Player Score = ${playerScore}, Computer Score = ${computerScore}`;
     });
 
     const scissorsButton = document.querySelector(".btn-scissors");
     scissorsButton.addEventListener("click", () => {
-        div.textContent = getWinner("scissors", getComputerChoice());
+        div.textContent = playRound("scissors", getComputerChoice());
         score.textContent = `Player Score = ${playerScore}, Computer Score = ${computerScore}`;
     });
 
