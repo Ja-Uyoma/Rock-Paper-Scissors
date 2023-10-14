@@ -14,9 +14,6 @@ function getComputerChoice() {
     }
 }
 
-let playerScore = 0;
-let computerScore = 0;
-
 function playerWon(player, computer) {
     return (player === "paper" && computer === "rock") 
         || (player === "rock" && computer === "scissors") 
@@ -27,6 +24,18 @@ function computerWon(player, computer) {
     return (computer === "paper" && player === "rock")
         || (computer === "rock" && player === "scissors")
         || (computer === "scissors" && player === "paper");
+}
+
+let playerScore = 0;
+let computerScore = 0;
+
+function incrementScoreIfWon(player, computer) {
+    if (playerWon(player, computer)) {
+        ++playerScore;
+    }
+    else if (computerWon(player, computer)) {
+        ++computerScore;
+    }
 }
 
 function getWinner(player, computer) {
