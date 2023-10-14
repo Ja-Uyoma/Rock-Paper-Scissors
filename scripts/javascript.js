@@ -17,36 +17,36 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
-function getWinner(player, computerSelection) {
+function getWinner(player, computer) {
     player.toLowerCase();
 
-    if (player === computerSelection) {
+    if (player === computer) {
         return "Stalemate";
     }
 
-    if (player === "rock" && computerSelection === "paper") {
+    if (player === "rock" && computer === "paper") {
         ++computerScore;
         return "You Lose! Paper beats Rock";
     }
-    else if (player === "paper" && computerSelection === "rock") {
+    else if (player === "paper" && computer === "rock") {
         ++playerScore;
         return "You Win! Paper beats Rock";
     }
 
-    if (player === "rock" && computerSelection === "scissors") {
+    if (player === "rock" && computer === "scissors") {
         ++playerScore;
         return "You Win! Rock beats Scissors";
     }
-    else if (player === "scissors" && computerSelection === "rock") {
+    else if (player === "scissors" && computer === "rock") {
         ++computerScore;
         return "You Lose! Rock beats Scissors";
     }
 
-    if (player === "scissors" && computerSelection === "paper") {
+    if (player === "scissors" && computer === "paper") {
         ++playerScore;
         return "You Win! Scissors beats Paper";
     }
-    else if (player === "paper" && computerSelection === "scissors") {
+    else if (player === "paper" && computer === "scissors") {
         ++computerScore;
         return "You Lose! Scissors beats Paper";
     }
