@@ -38,6 +38,15 @@ function incrementScoreIfWon(player, computer) {
     }
 }
 
+function createWinningMessage(player, computer) {
+    if (playerWon(player, computer)) {
+        return `You Win! ${player} beats ${computer}`;
+    }
+    else if (computerWon(player, computer)) {
+        return `You Lose! ${computer} beats ${player}`;
+    }
+}
+
 function getWinner(player, computer) {
     player.toLowerCase();
 
