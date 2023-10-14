@@ -38,15 +38,6 @@ function incrementScoreIfWon(player, computer) {
     }
 }
 
-function createWinningMessage(player, computer) {
-    if (playerWon(player, computer)) {
-        return `You Win! ${player} beats ${computer}`;
-    }
-    else if (computerWon(player, computer)) {
-        return `You Lose! ${computer} beats ${player}`;
-    }
-}
-
 function createCurrentScoreMessage() {
     return `Your score: ${playerScore}, Computer's score: ${computerScore}`;
 }
