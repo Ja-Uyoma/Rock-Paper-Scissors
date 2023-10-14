@@ -47,6 +47,10 @@ function createWinningMessage(player, computer) {
     }
 }
 
+function createCurrentScoreMessage() {
+    return `Your score: ${playerScore}, Computer's score: ${computerScore}`;
+}
+
 function getWinner(player, computer) {
     player.toLowerCase();
 
