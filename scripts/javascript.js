@@ -18,6 +18,12 @@ function getComputerChoice() {
     }
 }
 
+/**
+ * Determine if the player won a round of the game
+ * @param {string} player The player's move
+ * @param {string} computer The computer's move
+ * @returns True if the player won the round, and false otherwise
+ */
 function playerWon(player, computer) {
     return (player === "paper" && computer === "rock") 
         || (player === "rock" && computer === "scissors") 
