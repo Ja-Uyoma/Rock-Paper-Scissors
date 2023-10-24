@@ -1,5 +1,9 @@
 "use strict";
 
+/**
+ * Generate a random number in the range [0, 2] inclusive representing the computer's move
+ * @returns A string representing the computer's move
+ */
 function getComputerChoice() {
     const choice = Math.floor(Math.random() * 3);
 
