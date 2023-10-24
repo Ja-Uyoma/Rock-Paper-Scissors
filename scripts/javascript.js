@@ -42,6 +42,12 @@ function computerWon(player, computer) {
         || (computer === "scissors" && player === "paper");
 }
 
+/**
+ * Determine which player has won a round of the game, and return a string congratulating the winner
+ * @param {string} player The player's move during this round of the game
+ * @param {string} computer The computer's move during this round of the game
+ * @returns A string congratulating the winner of the round
+ */
 function playRound(player, computer) {
     player.toLowerCase();
 
