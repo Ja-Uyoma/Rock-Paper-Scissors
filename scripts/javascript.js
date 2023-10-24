@@ -62,6 +62,15 @@ function playRound(player, computer) {
     }
 }
 
+/**
+ * Capitalize the first letter in a word
+ * @param {string} word The word whose first letter is to be capitalized
+ * @returns A new string containing the word with its first letter capitalized
+ */
+function capitalizeFirstLetterInWord(word) {
+    return word[0].toUpperCase() + word.slice(1, word.length);
+}
+
 let playerScore = 0;
 let computerScore = 0;
 
