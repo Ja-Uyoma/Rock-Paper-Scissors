@@ -55,10 +55,10 @@ function playRound(player, computer) {
         return "Stalemate";
     }
     else if (playerWon(player, computer)) {
-        return `You Win! ${player} beats ${computer}`;
+        return `You Win! ${capitalizeFirstLetterInWord(player)} beats ${capitalizeFirstLetterInWord(computer)}`;
     }
     else if (computerWon(player, computer)) {
-        return `You Lose! ${computer} beats ${player}`;
+        return `You Lose! ${capitalizeFirstLetterInWord(computer)} beats ${capitalizeFirstLetterInWord(player)}`;
     }
 }
 
