@@ -29,15 +29,6 @@ function computerWon(player, computer) {
 let playerScore = 0;
 let computerScore = 0;
 
-function incrementScoreIfWon(player, computer) {
-    if (playerWon(player, computer)) {
-        ++playerScore;
-    }
-    else if (computerWon(player, computer)) {
-        ++computerScore;
-    }
-}
-
 function createCurrentScoreMessage() {
     return `Your score: ${playerScore}, Computer's score: ${computerScore}`;
 }
