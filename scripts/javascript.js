@@ -30,6 +30,12 @@ function playerWon(player, computer) {
         || (player === "scissors" && computer === "paper");
 }
 
+/**
+ * Determine if the computer won a round of the game
+ * @param {string} player The player's move
+ * @param {string} computer The computer's move
+ * @returns True if the computer won, and false otherwise
+ */
 function computerWon(player, computer) {
     return (computer === "paper" && player === "rock")
         || (computer === "rock" && player === "scissors")
