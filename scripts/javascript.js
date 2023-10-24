@@ -29,10 +29,6 @@ function computerWon(player, computer) {
 let playerScore = 0;
 let computerScore = 0;
 
-function createCurrentScoreMessage() {
-    return `Your score: ${playerScore}, Computer's score: ${computerScore}`;
-}
-
 function playRound(player, computer) {
     player.toLowerCase();
 
