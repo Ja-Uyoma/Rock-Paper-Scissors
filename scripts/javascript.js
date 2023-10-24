@@ -49,7 +49,7 @@ function computerWon(player, computer) {
  * @returns A string congratulating the winner of the round
  */
 function playRound(player, computer) {
-    player.toLowerCase();
+    player = player.toLowerCase();
 
     if (player === computer) {
         return "Stalemate";
