@@ -26,9 +26,6 @@ function computerWon(player, computer) {
         || (computer === "scissors" && player === "paper");
 }
 
-let playerScore = 0;
-let computerScore = 0;
-
 function playRound(player, computer) {
     player.toLowerCase();
 
@@ -42,6 +39,9 @@ function playRound(player, computer) {
         return `You Lose! ${computer} beats ${player}`;
     }
 }
+
+let playerScore = 0;
+let computerScore = 0;
 
 function game() {
     const body = document.querySelector("body");
