@@ -1,34 +1,7 @@
 "use strict";
 
 import { GetComputerChoice } from "./GetComputerChoice.js";
-
-/**
- * Determine if the player won a round of the game
- * @param {string} player The player's move
- * @param {string} computer The computer's move
- * @returns True if the player won the round, and false otherwise
- */
-function playerWon(player, computer) {
-  return (
-    (player === "paper" && computer === "rock") ||
-    (player === "rock" && computer === "scissors") ||
-    (player === "scissors" && computer === "paper")
-  );
-}
-
-/**
- * Determine if the computer won a round of the game
- * @param {string} player The player's move
- * @param {string} computer The computer's move
- * @returns True if the computer won, and false otherwise
- */
-function computerWon(player, computer) {
-  return (
-    (computer === "paper" && player === "rock") ||
-    (computer === "rock" && player === "scissors") ||
-    (computer === "scissors" && player === "paper")
-  );
-}
+import { PlayerHasWon, ComputerHasWon } from "./WinConditions.js";
 
 /**
  * Determine which player has won a round of the game, and return a string congratulating the winner
@@ -41,9 +14,9 @@ function playRound(player, computer) {
 
   if (player === computer) {
     return "Stalemate";
-  } else if (playerWon(player, computer)) {
+  } else if (PlayerHasWon(player, computer)) {
     return `You Win! ${capitalizeFirstLetterInWord(player)} beats ${capitalizeFirstLetterInWord(computer)}`;
-  } else if (computerWon(player, computer)) {
+  } else if (ComputerHasWon(player, computer)) {
     return `You Lose! ${capitalizeFirstLetterInWord(computer)} beats ${capitalizeFirstLetterInWord(player)}`;
   }
 }
