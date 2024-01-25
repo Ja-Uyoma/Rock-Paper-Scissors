@@ -1,20 +1,6 @@
 "use strict";
 
-/**
- * Generate a random number in the range [0, 2] inclusive representing the computer's move
- * @returns A string representing the computer's move
- */
-function getComputerChoice() {
-  const choice = Math.floor(Math.random() * 3);
-
-  if (choice == 0) {
-    return "rock";
-  } else if (choice == 1) {
-    return "paper";
-  } else if (choice == 2) {
-    return "scissors";
-  }
-}
+import { GetComputerChoice } from "./GetComputerChoice.js";
 
 /**
  * Determine if the player won a round of the game
@@ -81,19 +67,19 @@ function game() {
 
   const rockButton = document.querySelector(".btn-rock");
   rockButton.addEventListener("click", () => {
-    div.textContent = playRound("rock", getComputerChoice());
+    div.textContent = playRound("rock", GetComputerChoice());
     score.textContent = `Player Score = ${playerScore}, Computer Score = ${computerScore}`;
   });
 
   const paperButton = document.querySelector(".btn-paper");
   paperButton.addEventListener("click", () => {
-    div.textContent = playRound("paper", getComputerChoice());
+    div.textContent = playRound("paper", GetComputerChoice());
     score.textContent = `Player Score = ${playerScore}, Computer Score = ${computerScore}`;
   });
 
   const scissorsButton = document.querySelector(".btn-scissors");
   scissorsButton.addEventListener("click", () => {
-    div.textContent = playRound("scissors", getComputerChoice());
+    div.textContent = playRound("scissors", GetComputerChoice());
     score.textContent = `Player Score = ${playerScore}, Computer Score = ${computerScore}`;
   });
 
