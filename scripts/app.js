@@ -5,17 +5,15 @@
  * @returns A string representing the computer's move
  */
 function getComputerChoice() {
-    const choice = Math.floor(Math.random() * 3);
+  const choice = Math.floor(Math.random() * 3);
 
-    if (choice == 0) {
-        return "rock";
-    }
-    else if (choice == 1) {
-        return "paper";
-    }
-    else if (choice == 2) {
-        return "scissors";
-    }
+  if (choice == 0) {
+    return "rock";
+  } else if (choice == 1) {
+    return "paper";
+  } else if (choice == 2) {
+    return "scissors";
+  }
 }
 
 /**
@@ -25,9 +23,11 @@ function getComputerChoice() {
  * @returns True if the player won the round, and false otherwise
  */
 function playerWon(player, computer) {
-    return (player === "paper" && computer === "rock") 
-        || (player === "rock" && computer === "scissors") 
-        || (player === "scissors" && computer === "paper");
+  return (
+    (player === "paper" && computer === "rock") ||
+    (player === "rock" && computer === "scissors") ||
+    (player === "scissors" && computer === "paper")
+  );
 }
 
 /**
@@ -37,9 +37,11 @@ function playerWon(player, computer) {
  * @returns True if the computer won, and false otherwise
  */
 function computerWon(player, computer) {
-    return (computer === "paper" && player === "rock")
-        || (computer === "rock" && player === "scissors")
-        || (computer === "scissors" && player === "paper");
+  return (
+    (computer === "paper" && player === "rock") ||
+    (computer === "rock" && player === "scissors") ||
+    (computer === "scissors" && player === "paper")
+  );
 }
 
 /**
@@ -49,17 +51,15 @@ function computerWon(player, computer) {
  * @returns A string congratulating the winner of the round
  */
 function playRound(player, computer) {
-    player = player.toLowerCase();
+  player = player.toLowerCase();
 
-    if (player === computer) {
-        return "Stalemate";
-    }
-    else if (playerWon(player, computer)) {
-        return `You Win! ${capitalizeFirstLetterInWord(player)} beats ${capitalizeFirstLetterInWord(computer)}`;
-    }
-    else if (computerWon(player, computer)) {
-        return `You Lose! ${capitalizeFirstLetterInWord(computer)} beats ${capitalizeFirstLetterInWord(player)}`;
-    }
+  if (player === computer) {
+    return "Stalemate";
+  } else if (playerWon(player, computer)) {
+    return `You Win! ${capitalizeFirstLetterInWord(player)} beats ${capitalizeFirstLetterInWord(computer)}`;
+  } else if (computerWon(player, computer)) {
+    return `You Lose! ${capitalizeFirstLetterInWord(computer)} beats ${capitalizeFirstLetterInWord(player)}`;
+  }
 }
 
 /**
@@ -68,37 +68,37 @@ function playRound(player, computer) {
  * @returns A new string containing the word with its first letter capitalized
  */
 function capitalizeFirstLetterInWord(word) {
-    return word[0].toUpperCase() + word.slice(1, word.length);
+  return word[0].toUpperCase() + word.slice(1, word.length);
 }
 
 let playerScore = 0;
 let computerScore = 0;
 
 function game() {
-    const body = document.querySelector("body");
-    const div = document.createElement("div");
-    const score = document.createElement("div");
+  const body = document.querySelector("body");
+  const div = document.createElement("div");
+  const score = document.createElement("div");
 
-    const rockButton = document.querySelector(".btn-rock");
-    rockButton.addEventListener("click", () => {
-        div.textContent = playRound("rock", getComputerChoice());
-        score.textContent = `Player Score = ${playerScore}, Computer Score = ${computerScore}`;
-    });
+  const rockButton = document.querySelector(".btn-rock");
+  rockButton.addEventListener("click", () => {
+    div.textContent = playRound("rock", getComputerChoice());
+    score.textContent = `Player Score = ${playerScore}, Computer Score = ${computerScore}`;
+  });
 
-    const paperButton = document.querySelector(".btn-paper");
-    paperButton.addEventListener("click", () => {
-        div.textContent = playRound("paper", getComputerChoice());
-        score.textContent = `Player Score = ${playerScore}, Computer Score = ${computerScore}`;
-    });
+  const paperButton = document.querySelector(".btn-paper");
+  paperButton.addEventListener("click", () => {
+    div.textContent = playRound("paper", getComputerChoice());
+    score.textContent = `Player Score = ${playerScore}, Computer Score = ${computerScore}`;
+  });
 
-    const scissorsButton = document.querySelector(".btn-scissors");
-    scissorsButton.addEventListener("click", () => {
-        div.textContent = playRound("scissors", getComputerChoice());
-        score.textContent = `Player Score = ${playerScore}, Computer Score = ${computerScore}`;
-    });
+  const scissorsButton = document.querySelector(".btn-scissors");
+  scissorsButton.addEventListener("click", () => {
+    div.textContent = playRound("scissors", getComputerChoice());
+    score.textContent = `Player Score = ${playerScore}, Computer Score = ${computerScore}`;
+  });
 
-    body.appendChild(div);
-    body.appendChild(score);
+  body.appendChild(div);
+  body.appendChild(score);
 }
 
 game();
