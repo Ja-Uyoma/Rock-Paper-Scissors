@@ -4,7 +4,7 @@
  * @param {string} computer The computer's move
  * @returns True if the user won the round, and false otherwise
  */
-export const PlayerHasWon = (user, computer) => {
+export const UserHasWon = (user, computer) => {
   return (
     (user === "paper" && computer === "rock") ||
     (user === "rock" && computer === "scissors") ||
@@ -19,5 +19,5 @@ export const PlayerHasWon = (user, computer) => {
  * @returns True if the computer won, and false otherwise
  */
 export const ComputerHasWon = (user, computer) => {
-  return !PlayerHasWon(user, computer);
+  return !UserHasWon(user, computer);
 };
