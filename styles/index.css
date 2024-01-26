@@ -7,3 +7,21 @@
 ::after {
   box-sizing: inherit;
 }
+
+div.buttons {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-rock,
+.btn-paper,
+.btn-scissors {
+  width: min-content;
+  height: min-content;
+}
+
+button span {
+  font-size: 8rem;
+}
