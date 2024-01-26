@@ -22,8 +22,8 @@ div.buttons {
 .btn-rock,
 .btn-paper,
 .btn-scissors {
-  width: min-content;
-  height: min-content;
+  width: 160px;
+  height: 160px;
 }
 
 button span {
