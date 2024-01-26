@@ -1,7 +1,7 @@
 "use strict";
 
 import { GetComputerChoice } from "./GetComputerChoice.js";
-import { ComputerHasWon, Stalemate, UserHasWon } from "./WinConditions.js";
+import { ComputerHasWon, UserHasWon } from "./WinConditions.js";
 
 let playerScore = 0;
 let computerScore = 0;
