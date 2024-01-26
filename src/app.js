@@ -6,7 +6,7 @@ import { ComputerHasWon, UserHasWon } from "./WinConditions.js";
 let playerScore = 0;
 let computerScore = 0;
 
-const updateAndLogScore = (user, computer) => {
+const playRound = (user, computer) => {
   if (UserHasWon(user, computer)) {
     ++playerScore;
     return `You win! ${user} beats ${computer}.\n\nUser = ${playerScore}, Computer = ${computerScore}`;
@@ -25,7 +25,7 @@ function game() {
   const rockButton = document.querySelector(".btn-rock");
   rockButton.addEventListener("click", () => {
     let computer = GetComputerChoice();
-    let text = updateAndLogScore("rock", computer);
+    let text = playRound("rock", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
       text = "Game Over!";
@@ -37,7 +37,7 @@ function game() {
   const paperButton = document.querySelector(".btn-paper");
   paperButton.addEventListener("click", () => {
     let computer = GetComputerChoice();
-    let text = updateAndLogScore("paper", computer);
+    let text = playRound("paper", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
       text = "Game Over!";
@@ -49,7 +49,7 @@ function game() {
   const scissorsButton = document.querySelector(".btn-scissors");
   scissorsButton.addEventListener("click", () => {
     let computer = GetComputerChoice();
-    let text = updateAndLogScore("scissors", computer);
+    let text = playRound("scissors", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
       text = "Game Over!";
