@@ -12,11 +12,11 @@ const playRound = (user, computer) => {
   if (UserHasWon(user, computer)) {
     ++playerScore;
     playerScoreBoard.textContent = playerScore;
-    return `You win! ${user} beats ${computer}.\n\nUser = ${playerScore}, Computer = ${computerScore}`;
+    return `You win! ${user} beats ${computer}.`;
   } else if (ComputerHasWon(user, computer)) {
     ++computerScore;
     computerScoreBoard.textContent = computerScore;
-    return `You lose! ${computer} beats ${user}.\n\nUser = ${playerScore}, Computer = ${computerScore}`;
+    return `You lose! ${computer} beats ${user}.`;
   }
 
   return `Stalemate!`;
