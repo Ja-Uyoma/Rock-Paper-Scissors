@@ -21,3 +21,13 @@ export const UserHasWon = (user, computer) => {
 export const ComputerHasWon = (user, computer) => {
   return !UserHasWon(user, computer);
 };
+
+/**
+ * Determine if there was a stalemate
+ * @param {string} user The user's move
+ * @param {string} computer The computer's move
+ * @returns True if there was a stalemate, false otherwise
+ */
+export const Stalemate = (user, computer) => {
+  return user === computer;
+};
