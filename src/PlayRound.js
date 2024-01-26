@@ -1,4 +1,4 @@
-import { UserHasWon, ComputerHasWon } from "./WinConditions.js";
+import { UserHasWon, ComputerHasWon, Stalemate } from "./WinConditions.js";
 
 /**
  * Determine which player has won a round of the game, and return a string congratulating the winner
@@ -7,7 +7,7 @@ import { UserHasWon, ComputerHasWon } from "./WinConditions.js";
  * @returns A string congratulating the winner of the round
  */
 export const PlayRound = (user, computer) => {
-  if (user === computer) {
+  if (Stalemate(user, computer)) {
     return "Stalemate";
   } else if (UserHasWon(user, computer)) {
     return `You Win! ${capitalizeFirstLetterInWord(user)} beats ${capitalizeFirstLetterInWord(computer)}`;
