@@ -22,6 +22,7 @@ function game() {
   const body = document.querySelector("body");
   const div = document.createElement("div");
   const dialog = document.querySelector("dialog");
+  const dialogBtn = document.querySelector("dialog > button");
 
   const rockButton = document.querySelector(".btn-rock");
   rockButton.addEventListener("click", () => {
@@ -57,6 +58,13 @@ function game() {
     }
 
     div.textContent = text;
+  });
+
+  dialogBtn.addEventListener("click", () => {
+    dialog.close();
+    playerScore = 0;
+    computerScore = 0;
+    div.textContent = "";
   });
 
   body.appendChild(div);
