@@ -5,6 +5,8 @@
  * @returns True if the user won the round, and false otherwise
  */
 export const UserHasWon = (user, computer) => {
+  user = user.toLowerCase();
+
   return (
     (user === "paper" && computer === "rock") ||
     (user === "rock" && computer === "scissors") ||
@@ -29,5 +31,7 @@ export const ComputerHasWon = (user, computer) => {
  * @returns True if there was a stalemate, false otherwise
  */
 export const Stalemate = (user, computer) => {
+  user = user.toLowerCase();
+
   return user === computer;
 };
