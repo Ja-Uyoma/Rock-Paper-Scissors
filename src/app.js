@@ -34,39 +34,39 @@ function game() {
   rockButton.addEventListener("click", () => {
     let computer = GetComputerChoice();
     playerMove.textContent = "✊";
-    let text = playRound("rock", computer);
+    let outcome = playRound("rock", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
       dialog.showModal();
     }
 
-    div.textContent = text;
+    div.textContent = outcome;
   });
 
   const paperButton = document.querySelector(".btn-paper");
   paperButton.addEventListener("click", () => {
     let computer = GetComputerChoice();
     playerMove.textContent = "✋";
-    let text = playRound("paper", computer);
+    let outcome = playRound("paper", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
       dialog.showModal();
     }
 
-    div.textContent = text;
+    div.textContent = outcome;
   });
 
   const scissorsButton = document.querySelector(".btn-scissors");
   scissorsButton.addEventListener("click", () => {
     let computer = GetComputerChoice();
     playerMove.textContent = "✌";
-    let text = playRound("scissors", computer);
+    let outcome = playRound("scissors", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
       dialog.showModal();
     }
 
-    div.textContent = text;
+    div.textContent = outcome;
   });
 
   dialogBtn.addEventListener("click", () => {
