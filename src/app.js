@@ -9,7 +9,6 @@ let computerScore = 0;
 function game() {
   const body = document.querySelector("body");
   const div = document.createElement("div");
-  const score = document.createElement("div");
 
   const rockButton = document.querySelector(".btn-rock");
   rockButton.addEventListener("click", () => {
@@ -78,7 +77,6 @@ function game() {
   });
 
   body.appendChild(div);
-  body.appendChild(score);
 }
 
 game();
