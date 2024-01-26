@@ -31,7 +31,5 @@ export const ComputerHasWon = (user, computer) => {
  * @returns True if there was a stalemate, false otherwise
  */
 export const Stalemate = (user, computer) => {
-  user = user.toLowerCase();
-
-  return user === computer;
+  return !UserHasWon(user, computer) && !ComputerHasWon(user, computer);
 };
