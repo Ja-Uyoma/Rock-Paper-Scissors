@@ -12,6 +12,13 @@ header > h1 {
   text-align: center;
 }
 
+div.scores {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
+}
+
 div.buttons {
   display: flex;
   gap: 2em;
