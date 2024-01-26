@@ -35,5 +35,5 @@ export const ComputerHasWon = (user, computer) => {
  * @returns True if there was a stalemate, false otherwise
  */
 export const Stalemate = (user, computer) => {
-  return !UserHasWon(user, computer) && !ComputerHasWon(user, computer);
+  return user === computer;
 };
