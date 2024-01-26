@@ -7,6 +7,8 @@ let playerScore = 0;
 let computerScore = 0;
 const playerScoreBoard = document.querySelector(".player-score span");
 const computerScoreBoard = document.querySelector(".computer-score span");
+const playerMove = document.querySelector(".player-score > .move");
+const computerMove = document.querySelector(".computer-score > .move");
 
 const playRound = (user, computer) => {
   if (UserHasWon(user, computer)) {
@@ -31,6 +33,7 @@ function game() {
   const rockButton = document.querySelector(".btn-rock");
   rockButton.addEventListener("click", () => {
     let computer = GetComputerChoice();
+    playerMove.textContent = "✊";
     let text = playRound("rock", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
@@ -43,6 +46,7 @@ function game() {
   const paperButton = document.querySelector(".btn-paper");
   paperButton.addEventListener("click", () => {
     let computer = GetComputerChoice();
+    playerMove.textContent = "✋";
     let text = playRound("paper", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
@@ -55,6 +59,7 @@ function game() {
   const scissorsButton = document.querySelector(".btn-scissors");
   scissorsButton.addEventListener("click", () => {
     let computer = GetComputerChoice();
+    playerMove.textContent = "✌";
     let text = playRound("scissors", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
@@ -71,6 +76,8 @@ function game() {
     div.textContent = "";
     playerScoreBoard.textContent = "0";
     computerScoreBoard.textContent = "0";
+    playerMove.textContent = "?";
+    computerMove.textContent = "?";
   });
 
   body.appendChild(div);
