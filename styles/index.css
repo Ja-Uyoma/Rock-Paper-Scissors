@@ -8,6 +8,10 @@
   box-sizing: inherit;
 }
 
+header > h1 {
+  text-align: center;
+}
+
 div.buttons {
   display: flex;
   gap: 2em;
