@@ -21,7 +21,11 @@ export const UserHasWon = (user, computer) => {
  * @returns True if the computer won, and false otherwise
  */
 export const ComputerHasWon = (user, computer) => {
-  return !UserHasWon(user, computer);
+  return (
+    (computer === "paper" && user === "rock") ||
+    (computer === "rock" && user === "scissors") ||
+    (computer === "scissors" && user === "paper")
+  );
 };
 
 /**
