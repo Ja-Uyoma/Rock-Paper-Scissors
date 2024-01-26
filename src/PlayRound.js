@@ -7,8 +7,6 @@ import { UserHasWon, ComputerHasWon } from "./WinConditions.js";
  * @returns A string congratulating the winner of the round
  */
 export const PlayRound = (user, computer) => {
-  user = user.toLowerCase();
-
   if (user === computer) {
     return "Stalemate";
   } else if (UserHasWon(user, computer)) {
