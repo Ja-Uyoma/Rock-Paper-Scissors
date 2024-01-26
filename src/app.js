@@ -5,13 +5,17 @@ import { ComputerHasWon, UserHasWon } from "./WinConditions.js";
 
 let playerScore = 0;
 let computerScore = 0;
+const playerScoreBoard = document.querySelector(".player-score span");
+const computerScoreBoard = document.querySelector(".computer-score span");
 
 const playRound = (user, computer) => {
   if (UserHasWon(user, computer)) {
     ++playerScore;
+    playerScoreBoard.textContent = playerScore;
     return `You win! ${user} beats ${computer}.\n\nUser = ${playerScore}, Computer = ${computerScore}`;
   } else if (ComputerHasWon(user, computer)) {
     ++computerScore;
+    computerScoreBoard.textContent = computerScore;
     return `You lose! ${computer} beats ${user}.\n\nUser = ${playerScore}, Computer = ${computerScore}`;
   }
 
@@ -65,6 +69,8 @@ function game() {
     playerScore = 0;
     computerScore = 0;
     div.textContent = "";
+    playerScoreBoard.textContent = "0";
+    computerScoreBoard.textContent = "0";
   });
 
   body.appendChild(div);
