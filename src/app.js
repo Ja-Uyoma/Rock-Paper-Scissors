@@ -21,6 +21,7 @@ const playRound = (user, computer) => {
 function game() {
   const body = document.querySelector("body");
   const div = document.createElement("div");
+  const dialog = document.querySelector("dialog");
 
   const rockButton = document.querySelector(".btn-rock");
   rockButton.addEventListener("click", () => {
@@ -28,7 +29,7 @@ function game() {
     let text = playRound("rock", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
-      text = "Game Over!";
+      dialog.showModal();
     }
 
     div.textContent = text;
@@ -40,7 +41,7 @@ function game() {
     let text = playRound("paper", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
-      text = "Game Over!";
+      dialog.showModal();
     }
 
     div.textContent = text;
@@ -52,7 +53,7 @@ function game() {
     let text = playRound("scissors", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
-      text = "Game Over!";
+      dialog.showModal();
     }
 
     div.textContent = text;
