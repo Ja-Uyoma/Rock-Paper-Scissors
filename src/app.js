@@ -6,6 +6,18 @@ import { ComputerHasWon, Stalemate, UserHasWon } from "./WinConditions.js";
 let playerScore = 0;
 let computerScore = 0;
 
+const updateAndLogScore = (user, computer) => {
+  if (UserHasWon(user, computer)) {
+    ++playerScore;
+    return `You win! ${user} beats ${computer}.\n\nUser = ${playerScore}, Computer = ${computerScore}`;
+  } else if (ComputerHasWon(user, computer)) {
+    ++computerScore;
+    return `You lose! ${computer} beats ${user}.\n\nUser = ${playerScore}, Computer = ${computerScore}`;
+  }
+
+  return `Stalemate!`;
+};
+
 function game() {
   const body = document.querySelector("body");
   const div = document.createElement("div");
@@ -13,17 +25,7 @@ function game() {
   const rockButton = document.querySelector(".btn-rock");
   rockButton.addEventListener("click", () => {
     let computer = GetComputerChoice();
-    let text = "";
-
-    if (UserHasWon("rock", computer)) {
-      ++playerScore;
-      text = `You win! rock beats ${computer}!\n Your Score = ${playerScore}, Computer's score = ${computerScore}`;
-    } else if (ComputerHasWon("rock", computer)) {
-      ++computerScore;
-      text = `You Lose! ${computer} beats rock!\n Your Score = ${playerScore}, Computer's score = ${computerScore}`;
-    } else if (Stalemate("rock", computer)) {
-      text = "stalemate!";
-    }
+    let text = updateAndLogScore("rock", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
       text = "Game Over!";
@@ -35,17 +37,7 @@ function game() {
   const paperButton = document.querySelector(".btn-paper");
   paperButton.addEventListener("click", () => {
     let computer = GetComputerChoice();
-    let text = "";
-
-    if (UserHasWon("paper", computer)) {
-      ++playerScore;
-      text = `You win! paper beats ${computer}!\n Your Score = ${playerScore}, Computer's score = ${computerScore}`;
-    } else if (ComputerHasWon("paper", computer)) {
-      ++computerScore;
-      text = `You Lose! ${computer} beats paper!\n Your Score = ${playerScore}, Computer's score = ${computerScore}`;
-    } else if (Stalemate("paper", computer)) {
-      text = "stalemate!";
-    }
+    let text = updateAndLogScore("paper", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
       text = "Game Over!";
@@ -57,17 +49,7 @@ function game() {
   const scissorsButton = document.querySelector(".btn-scissors");
   scissorsButton.addEventListener("click", () => {
     let computer = GetComputerChoice();
-    let text = "";
-
-    if (UserHasWon("scissors", computer)) {
-      ++playerScore;
-      text = `You win! scissors beats ${computer}!\n Your Score = ${playerScore}, Computer's score = ${computerScore}`;
-    } else if (ComputerHasWon("scissors", computer)) {
-      ++computerScore;
-      text = `You Lose! ${computer} beats scissors!\n Your Score = ${playerScore}, Computer's score = ${computerScore}`;
-    } else if (Stalemate("scissors", computer)) {
-      text = "stalemate!";
-    }
+    let text = updateAndLogScore("scissors", computer);
 
     if (playerScore >= 5 || computerScore >= 5) {
       text = "Game Over!";
