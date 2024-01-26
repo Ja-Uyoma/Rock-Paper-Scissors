@@ -32,9 +32,10 @@ function game() {
 
   const rockButton = document.querySelector(".btn-rock");
   rockButton.addEventListener("click", () => {
-    let computer = GetComputerChoice();
+    let { text, emoji } = GetComputerChoice();
     playerMove.textContent = "✊";
-    let outcome = playRound("rock", computer);
+    computerMove.textContent = emoji;
+    let outcome = playRound("rock", text);
 
     if (playerScore >= 5 || computerScore >= 5) {
       dialog.showModal();
@@ -45,9 +46,10 @@ function game() {
 
   const paperButton = document.querySelector(".btn-paper");
   paperButton.addEventListener("click", () => {
-    let computer = GetComputerChoice();
+    let { text, emoji } = GetComputerChoice();
     playerMove.textContent = "✋";
-    let outcome = playRound("paper", computer);
+    computerMove.textContent = emoji;
+    let outcome = playRound("paper", text);
 
     if (playerScore >= 5 || computerScore >= 5) {
       dialog.showModal();
@@ -58,9 +60,10 @@ function game() {
 
   const scissorsButton = document.querySelector(".btn-scissors");
   scissorsButton.addEventListener("click", () => {
-    let computer = GetComputerChoice();
+    let { text, emoji } = GetComputerChoice();
     playerMove.textContent = "✌";
-    let outcome = playRound("scissors", computer);
+    computerMove.textContent = emoji;
+    let outcome = playRound("scissors", text);
 
     if (playerScore >= 5 || computerScore >= 5) {
       dialog.showModal();

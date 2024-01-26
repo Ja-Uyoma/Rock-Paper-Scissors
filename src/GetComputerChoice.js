@@ -6,11 +6,11 @@ export const GetComputerChoice = () => {
   const choice = Math.floor(Math.random() * 3);
 
   if (choice === 0) {
-    return "rock";
+    return { text: "rock", emoji: "✊" };
   } else if (choice === 1) {
-    return "paper";
+    return { text: "paper", emoji: "✋" };
   } else if (choice === 2) {
-    return "scissors";
+    return { text: "scissors", emoji: "✌" };
   }
 
   return "";
