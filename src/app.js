@@ -29,6 +29,7 @@ function game() {
   const div = document.createElement("div");
   const dialog = document.querySelector("dialog");
   const dialogBtn = document.querySelector("dialog > button");
+  const message = document.querySelector("main > div > p");
 
   const rockButton = document.querySelector(".btn-rock");
   rockButton.addEventListener("click", () => {
@@ -41,7 +42,7 @@ function game() {
       dialog.showModal();
     }
 
-    div.textContent = outcome;
+    message.textContent = outcome;
   });
 
   const paperButton = document.querySelector(".btn-paper");
@@ -55,7 +56,7 @@ function game() {
       dialog.showModal();
     }
 
-    div.textContent = outcome;
+    message.textContent = outcome;
   });
 
   const scissorsButton = document.querySelector(".btn-scissors");
@@ -69,7 +70,7 @@ function game() {
       dialog.showModal();
     }
 
-    div.textContent = outcome;
+    message.textContent = outcome;
   });
 
   dialogBtn.addEventListener("click", () => {
@@ -81,6 +82,7 @@ function game() {
     computerScoreBoard.textContent = "0";
     playerMove.textContent = "?";
     computerMove.textContent = "?";
+    message.textContent = "First to score 5 points wins the game!";
   });
 
   body.appendChild(div);
