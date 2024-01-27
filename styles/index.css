@@ -12,7 +12,8 @@ header > h1 {
   text-align: center;
 }
 
-div.scores {
+div.scores,
+div.message {
   display: flex;
   gap: 2em;
   align-items: center;
