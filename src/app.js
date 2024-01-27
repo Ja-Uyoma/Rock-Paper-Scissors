@@ -25,8 +25,6 @@ const playRound = (user, computer) => {
 };
 
 function game() {
-  const body = document.querySelector("body");
-  const div = document.createElement("div");
   const dialog = document.querySelector("dialog");
   const dialogBtn = document.querySelector("dialog > button");
   const message = document.querySelector("main > div > p");
@@ -77,15 +75,12 @@ function game() {
     dialog.close();
     playerScore = 0;
     computerScore = 0;
-    div.textContent = "";
     playerScoreBoard.textContent = "0";
     computerScoreBoard.textContent = "0";
     playerMove.textContent = "?";
     computerMove.textContent = "?";
     message.textContent = "First to score 5 points wins the game!";
   });
-
-  body.appendChild(div);
 }
 
 game();
